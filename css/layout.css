@@ -1,0 +1,32 @@
+:root {
+    --body-color: #212023;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    color: var(--body-color);
+    background: #f8f1e5 repeating-linear-gradient(to right,
+            rgba(220, 199, 176, 0.15),
+            rgba(220, 199, 176, 0.15) 1px,
+            transparent 1px,
+            transparent 20px);
+
+}
+
+.inner {
+    max-width: 141rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width:1024px) {
+    .inner {
+
+        /* margin: 0 16px; */
+
+    }
+}
