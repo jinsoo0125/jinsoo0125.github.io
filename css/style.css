@@ -2,6 +2,9 @@
     outline: 1px solid tomato--;
 }
 
+
+
+
 .header h1 {
     position: fixed;
     top: 6rem;
@@ -96,6 +99,7 @@
 
 .header .side_nav li.on a {
     animation: pulse 1.5s infinite;
+
 }
 
 
@@ -251,6 +255,7 @@
     font-family: "Poppins", sans-serif;
 
     max-width: 100%;
+    margin-top: -10px;
 
 
 }
@@ -371,6 +376,7 @@
     .main_visual h2 {
         font-size: 12rem;
         letter-spacing: 0.15rem;
+        margin-top: -10px;
     }
 
     .sub_title {
@@ -392,6 +398,7 @@
     .main_visual h2 {
         font-size: 8rem;
         letter-spacing: 0.5rem;
+        margin-top: -10px;
     }
 
     .sub_title {
@@ -425,7 +432,77 @@
     }
 }
 
-.portfolio {}
+.portfolio {
+    position: relative;
+
+}
+
+.portfolio::before {
+    content: "";
+    position: absolute;
+    width: 380px;
+
+    height: 380px;
+    background: rgba(255, 189, 89, 0.45);
+    border-radius: 50%;
+    left: -8%;
+    top: 12%;
+    z-index: -3;
+    animation: fadeInScale 1.2s ease-out forwards, floating 4s infinite ease-in-out;
+}
+
+
+.portfolio::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 189, 89, 0.2);
+    border-radius: 50%;
+    left: 22%;
+    top: 14%;
+    z-index: -3;
+    animation: fadeInScale 1.4s ease-out forwards, floating 4.5s infinite ease-in-out;
+}
+
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 🌊 은은하게 떠오르는 애니메이션 */
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.portfolio h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #BC6C25;
+    /* 포인트 컬러 */
+    margin-top: 8px;
+}
 
 .portfolio h2 {
     margin-bottom: 3.2rem;
@@ -474,6 +551,7 @@
     background: #BC6C25;
     border-radius: 0.8rem;
     padding: 1.2rem 2.4rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
@@ -488,7 +566,9 @@
 .portfolio .pt_wrap {
     display: flex;
     align-items: center;
+    gap: 10rem;
 }
+
 
 .portfolio .pt_wrap>* {
     flex: 1;
@@ -498,6 +578,7 @@
     opacity: 0;
     transform: translate(0, 20rem);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
 
 }
 
@@ -511,6 +592,8 @@
 .portfolio.on .pt_wrap .desc {
     opacity: 1;
     transform: translate(0, 0);
+    text-align: left;
+    padding-left: 1rem;
 
 }
 
@@ -538,23 +621,29 @@
     transform: translate(0, calc(-100% + 40rem));
 }
 
-.portfolio02 .pt_wrap .mockup {
-    order: -1;
-}
+
 
 @media (max-width: 1024px) {
-
     .portfolio .pt_wrap {
         flex-direction: column;
         text-align: center;
+        gap: 5rem;
+        padding: 0 16px;
+
     }
 
+    .portfolio .pt_wrap .desc,
+    .portfolio .pt_wrap .mockup {
+        margin: 0 16px;
+
+    }
 
     .portfolio .pt_wrap .desc {
         margin-bottom: 3.2rem;
-        transform: translate(0, 50px);
         opacity: 0;
+        transform: translate(0, 50px);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        text-align: left;
     }
 
     .portfolio.on .pt_wrap .desc {
@@ -562,130 +651,82 @@
         transform: translate(0, 0);
     }
 
-    .portfolio .pt_wrap .mockup {
-        order: -1;
-        margin-bottom: 3.6rem;
-        opacity: 0;
-        transform: translateY(3rem) scale(0.95);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-
-    .portfolio.on .pt_wrap .mockup {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-
-    }
-
-
     .portfolio .mockup .mockup_img_p {
-        width: 64rem;
-        height: 36rem;
-        overflow: hidden;
-        border-radius: 3.2rem;
-        border: 0.2rem solid #ddd;
-        box-shadow: 0 0 2.4rem rgba(0, 0, 0, 0.25);
+        width: 60rem;
+        height: 34rem;
+        border-radius: 2.8rem;
     }
 
 
-    .portfolio .mockup .mockup_img_p img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top;
-        transition: none;
-
+    .portfolio::before {
+        width: 300px;
+        height: 300px;
+        left: -8%;
+        top: 18%;
     }
 
-
-    .portfolio .mockup .mockup_img_p:hover img {
-        transform: none;
-    }
-
-    .portfolio .pt_wrap .desc {
-        font-size: 1.8rem;
-
-    }
-
-    .portfolio .pt_wrap .desc strong {
-        font-size: 2.4rem;
+    .portfolio::after {
+        width: 100px;
+        height: 100px;
+        left: 20%;
+        top: 12%;
 
     }
 }
 
 @media (max-width: 768px) {
-
-
-
     .portfolio .pt_wrap {
         flex-direction: column;
         text-align: center;
+        gap: 4rem;
+        padding: 0 16px;
+
     }
 
+    .portfolio .pt_wrap .desc,
+    .portfolio .pt_wrap .mockup {
+        margin: 0 16px;
+
+    }
 
     .portfolio .pt_wrap .desc {
         margin-bottom: 2.4rem;
-        transform: translate(0, 30px);
-        opacity: 0;
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        text-align: center;
 
     }
-
-    .portfolio.on .pt_wrap .desc {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-
-
-    .portfolio .pt_wrap .mockup {
-        order: -1;
-        margin-bottom: 2.4rem;
-    }
-
 
     .portfolio .mockup .mockup_img_p {
         width: 48rem;
         height: 28rem;
-        overflow: hidden;
         border-radius: 2.4rem;
     }
 
-    .portfolio .mockup .mockup_img_p img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top;
+
+    .portfolio::before {
+        width: 250px;
+        height: 250px;
+        left: -10%;
+        top: 20%;
     }
 
-
-    .portfolio .mockup .mockup_img_p:hover img {
-        transform: none;
-    }
-
-    .portfolio .pt_wrap .desc {
-        font-size: 1.6rem;
-
-    }
-
-    .portfolio .pt_wrap .desc strong {
-        font-size: 2rem;
+    .portfolio::after {
+        width: 80px;
+        height: 80px;
+        left: 22%;
+        top: 14%;
     }
 }
 
+@media (max-width: 480px) {
+    .portfolio .pt_wrap {
+        padding: 0 16px;
 
-@media (max-width: 485px) {
-
-
-
-    .portfolio .pt_wrap .desc {
-        margin-bottom: 1.6rem;
     }
 
+    .portfolio .pt_wrap .desc,
     .portfolio .pt_wrap .mockup {
-        order: -1;
-        margin-bottom: 1.6rem;
+        margin: 0 16px;
     }
-
 
     .portfolio .mockup .mockup_img_p {
         width: 35rem;
@@ -693,25 +734,110 @@
         border-radius: 1.6rem;
     }
 
-
-    .portfolio .mockup .mockup_img_p img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top;
+    /* 배경 원 위치 수정 */
+    .portfolio::before {
+        width: 200px;
+        height: 200px;
+        left: -12%;
+        top: 22%;
     }
 
-    .portfolio .pt_wrap .desc {
-        font-size: 1.4rem;
+    .portfolio::after {
+        width: 70px;
+        height: 70px;
+        left: 18%;
+        top: 16%;
+    }
+}
 
+
+
+.training .inner {
+    max-width: 144rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.training ul {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.training ul li {
+    overflow: hidden;
+    border-radius: 1.5rem;
+    background: #FAF8F4;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.training ul li a .img_box {
+    overflow: hidden;
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.training ul li a .img_box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.training ul li:hover .img_box img {
+    transform: scale(1.03);
+}
+
+
+.training ul li a span {
+    display: block;
+    padding: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    text-align: center;
+}
+
+
+.training ul li a p {
+    padding: 0 1.5rem 2rem;
+    color: #666;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+.training ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 1024px) {
+    .training ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .training ul {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .portfolio .pt_wrap .desc strong {
+    .training ul li {
+        text-align: center;
+    }
+
+    .training ul li a span {
         font-size: 1.8rem;
     }
 
-
-
+    .training ul li a p {
+        font-size: 1.4rem;
+    }
 }
 
 
