@@ -628,20 +628,20 @@
         flex-direction: column;
         text-align: center;
         gap: 5rem;
-        padding: 0 16px;
+        padding: 0 1.6rem;
 
     }
 
     .portfolio .pt_wrap .desc,
     .portfolio .pt_wrap .mockup {
-        margin: 0 16px;
+        margin: 0 1.6rem;
 
     }
 
     .portfolio .pt_wrap .desc {
         margin-bottom: 3.2rem;
         opacity: 0;
-        transform: translate(0, 50px);
+        transform: translate(0, 5rem);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         text-align: left;
     }
@@ -659,15 +659,15 @@
 
 
     .portfolio::before {
-        width: 300px;
-        height: 300px;
+        width: 30rem;
+        height: 30rem;
         left: -8%;
         top: 18%;
     }
 
     .portfolio::after {
-        width: 100px;
-        height: 100px;
+        width: 10rem;
+        height: 10rem;
         left: 20%;
         top: 12%;
 
@@ -685,7 +685,7 @@
 
     .portfolio .pt_wrap .desc,
     .portfolio .pt_wrap .mockup {
-        margin: 0 16px;
+        margin: 0 1.6rem;
 
     }
 
@@ -703,15 +703,15 @@
 
 
     .portfolio::before {
-        width: 250px;
-        height: 250px;
+        width: 25rem;
+        height: 25rem;
         left: -10%;
         top: 20%;
     }
 
     .portfolio::after {
-        width: 80px;
-        height: 80px;
+        width: 8rem;
+        height: 8rem;
         left: 22%;
         top: 14%;
     }
@@ -719,13 +719,13 @@
 
 @media (max-width: 480px) {
     .portfolio .pt_wrap {
-        padding: 0 16px;
+        padding: 0 1.6rem;
 
     }
 
     .portfolio .pt_wrap .desc,
     .portfolio .pt_wrap .mockup {
-        margin: 0 16px;
+        margin: 0 1.6rem;
     }
 
     .portfolio .mockup .mockup_img_p {
@@ -734,17 +734,16 @@
         border-radius: 1.6rem;
     }
 
-    /* 배경 원 위치 수정 */
     .portfolio::before {
-        width: 200px;
-        height: 200px;
+        width: 20rem;
+        height: 20rem;
         left: -12%;
         top: 22%;
     }
 
     .portfolio::after {
-        width: 70px;
-        height: 70px;
+        width: 7rem;
+        height: 7rem;
         left: 18%;
         top: 16%;
     }
