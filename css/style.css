@@ -1,5 +1,5 @@
 * {
-    outline: 1px solid tomato--;
+    outline: 1px solid tomato;
 }
 
 
@@ -478,7 +478,7 @@
     }
 }
 
-/* 🌊 은은하게 떠오르는 애니메이션 */
+
 @keyframes floating {
     0% {
         transform: translateY(0);
@@ -500,7 +500,6 @@
     width: 50px;
     height: 3px;
     background: #BC6C25;
-    /* 포인트 컬러 */
     margin-top: 8px;
 }
 
@@ -646,13 +645,27 @@
         text-align: left;
     }
 
+    .portfolio .pt_wrap .mockup {
+        opacity: 0;
+        transform: translate(20rem, 0);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+        opacity: 1;
+        transform: none;
+
+    }
+
+
+
+    .portfolio.on .pt_wrap .mockup {}
+
     .portfolio.on .pt_wrap .desc {
         opacity: 1;
         transform: translate(0, 0);
     }
 
     .portfolio .mockup .mockup_img_p {
-        width: 60rem;
+        width: 100%;
         height: 34rem;
         border-radius: 2.8rem;
     }
@@ -696,7 +709,7 @@
     }
 
     .portfolio .mockup .mockup_img_p {
-        width: 48rem;
+        width: 100%;
         height: 28rem;
         border-radius: 2.4rem;
     }
@@ -729,7 +742,7 @@
     }
 
     .portfolio .mockup .mockup_img_p {
-        width: 35rem;
+        width: 100%;
         height: 20rem;
         border-radius: 1.6rem;
     }
